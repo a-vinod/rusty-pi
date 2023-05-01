@@ -6,3 +6,15 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# eh_personality language item marks a function that is used for implementing
+# stack unwinding
+
+# Abort on panic => disables stack unwinding
+# Stack unwinding is used to free memory allocated on the stack in the event of # panic, however it's too complex to use here
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
