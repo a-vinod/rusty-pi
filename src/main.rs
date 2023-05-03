@@ -16,6 +16,10 @@
 #![no_main] // Hey compiler, don't use normal entry points
 
 use core::panic::PanicInfo;
+use core::arch::global_asm;
+
+// Assembly counterpart to this file.
+global_asm!(include_str!("boot.S"));
 
 // Called on panic
 #[panic_handler]
@@ -25,7 +29,7 @@ fn panic(_info: &PanicInfo) -> ! {
 
 // Overwrite OS entry point
 #[no_mangle] // Hey compiler, don't name-mangle _start()
-pub extern "C" fn _start() -> ! {
+pub extern "C" fn _start_kernel() -> ! {
     // We use `extern "C"` to use C calling convention for this function,
     // making it compatible and callable from other languages using C calling
     // convention. This is a requirement of the target system. The _start fn
