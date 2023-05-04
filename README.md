@@ -15,7 +15,7 @@ make clean
 make kernel-img
 ```
 
-Copy these four files to a microSD card and you're all set!
+Copy  four files to a microSD card and you're all set!
 
 
 ## Inspect the ELF
