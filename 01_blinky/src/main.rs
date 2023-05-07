@@ -57,7 +57,7 @@ pub extern "C" fn _start_rust() -> ! {
     const GPIO_GPSET0_OFFSET:isize  = 0x1C;
     const GPIO_GPCLR0_OFFSET:isize  = 0x28;
 
-    unsafe { 
+    unsafe {
         let p_gpio:*mut u32           = PBASE.offset(P_GPIO_OFFSET);
         let p_gpio_gpfsel1:*mut u32   = p_gpio.offset(GPIO_GPFSEL1_OFFSET);
         let p_gpio_gpset0:*mut u32    = p_gpio.offset(GPIO_GPSET0_OFFSET);

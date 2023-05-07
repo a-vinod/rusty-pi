@@ -1,6 +1,6 @@
 # rusty-pi
 
-A rusty OS for the Raspberry Pi.
+A rusty OS for the Raspberry Pi. Created brick by brick.
 
 Created for educational purposes. This may or may not bake your Pi.
 
